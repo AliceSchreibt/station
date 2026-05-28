@@ -131,14 +131,15 @@ h1 {
 
 
 <model-viewer
-  src="stantion.glb"
+  src="part.glb"
   camera-controls
   auto-rotate
-  touch-action="pan-y"
-  interaction-prompt="none"
-  camera-orbit="0deg 75deg auto"
+  rotation-per-second="30deg"
+  camera-orbit="0deg 90deg auto"
   min-camera-orbit="auto auto auto"
   max-camera-orbit="auto auto auto"
+  orientation="0deg 0deg 0deg"
+  touch-action="none"
   style="width:100%; height:70vh; background:#eee;">
 </model-viewer>
 
@@ -173,5 +174,20 @@ h1 {
 
   
 </a>
+
+<script>
+
+const model = document.querySelector("model-viewer");
+
+let rotation = 0;
+
+setInterval(() => {
+  rotation += 1;
+  model.orientation = `${rotation}deg ${rotation}deg ${rotation}deg`;
+}, 50);
+
+</script>
+
+  
 </body>
 </html>
