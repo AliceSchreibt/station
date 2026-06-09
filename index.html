@@ -34,9 +34,6 @@ h2 {
   margin-top: 50px;
   margin-bottom: 24px;
 }
-     
-
-<style>
 
 .links-table {
   width: 100%;
@@ -161,23 +158,19 @@ h2 {
 
 <h1>Станция эскимогенератора</h1>
 
-
+<div class="model-wrapper">
 
 <model-viewer src="stantion.glb" 
   camera-controls 
   tone-mapping="neutral" 
   poster="poster.webp" 
-  shadow-intensity="1">
-
-<button
-  class="hotspot"
-  slot="hotspot-1"
-  data-position="..."
-  onclick="window.open('pump.pdf')">
-</button>
+  shadow-intensity="1"
+  auto-rotate
+  auto-rotate-delay="0"
+  rotation-per-second="1deg">
   
     <button 
-      class="Hotspot"
+      class="hotspot"
       slot="hotspot-1"
       data-position="1.1283486748831142m -1.9800000001899916m -0.03315082394123875m" 
       onclick="window.open('pump.pdf')"
@@ -186,14 +179,14 @@ h2 {
       
         <div class="HotspotAnnotation">Блок нагрева пропиленгликоля</div>
     </button>
-  <button class="Hotspot" slot="hotspot-2" 
+  <button class="hotspot" slot="hotspot-2" 
                data-position="0.9044743787582423m -0.3018590642862913m -0.31035173275589983m"
                   onclick="window.open('pump.pdf')"
                data-normal="-1.0950281856927998e-16m -0.14904314688415032m -0.9888306934793588m" 
                data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Насос</div>
     </button>
-  <button class="Hotspot" slot="hotspot-3" 
+  <button class="hotspot" slot="hotspot-3" 
                data-position="0.05186868880615769m -1.3270644231898143m -0.332118674902295m"
                   onclick="window.open('pump.pdf')"
                data-normal="-0.9438832789844448m 0m -0.33027920863047533m" 
@@ -203,12 +196,10 @@ h2 {
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
-    <button slot="ar-button" id="ar-button">
-        View in your space
-    </button>
    
 </model-viewer>
 
+  </div>
   
 <h2>Полезные ссылки</h2>
 
@@ -244,14 +235,7 @@ h2 {
 
 <script>
 
-const model = document.querySelector("model-viewer");
 
-let rotation = 0;
-
-setInterval(() => {
-  rotation += 1;
-  model.orientation = `${rotation}deg ${rotation}deg ${rotation}deg`;
-}, 50);
 
 </script>
 
