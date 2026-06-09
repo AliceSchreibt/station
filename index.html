@@ -124,6 +124,16 @@ h2 {
   font-weight: bold;
 }
 
+.hotspot{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:red;
+  border:none;
+  cursor:pointer;
+}
+       
+
 </style>
 
      
@@ -139,19 +149,39 @@ h2 {
 
 
 
-<model-viewer src="stantion.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
-    <button class="Hotspot" slot="hotspot-1"
+<model-viewer src="stantion.glb" 
+  camera-controls 
+  tone-mapping="neutral" 
+  poster="poster.webp" 
+  shadow-intensity="1">
+
+<button
+  class="hotspot"
+  slot="hotspot-1"
+  data-position="..."
+  onclick="window.open('pump.pdf')">
+</button>
+  
+    <button 
+      class="Hotspot"
+      slot="hotspot-1"
       data-position="1.1283486748831142m -1.9800000001899916m -0.03315082394123875m" 
+      onclick="window.open('pump.pdf')"
       data-normal="4.440892098500626e-16m -1m -2.189528850507527e-47m"
       data-visibility-attribute="visible">
+      
         <div class="HotspotAnnotation">Блок нагрева пропиленгликоля</div>
-    </button><button class="Hotspot" slot="hotspot-2" 
+    </button>
+  <button class="Hotspot" slot="hotspot-2" 
                data-position="0.9044743787582423m -0.3018590642862913m -0.31035173275589983m"
+                  onclick="window.open('pump.pdf')"
                data-normal="-1.0950281856927998e-16m -0.14904314688415032m -0.9888306934793588m" 
                data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Насос</div>
-    </button><button class="Hotspot" slot="hotspot-3" 
+    </button>
+  <button class="Hotspot" slot="hotspot-3" 
                data-position="0.05186868880615769m -1.3270644231898143m -0.332118674902295m"
+                  onclick="window.open('pump.pdf')"
                data-normal="-0.9438832789844448m 0m -0.33027920863047533m" 
                data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Теплообменник</div>
@@ -162,9 +192,7 @@ h2 {
     <button slot="ar-button" id="ar-button">
         View in your space
     </button>
-    <div id="ar-prompt">
-        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-    </div>
+   
 </model-viewer>
 
   
