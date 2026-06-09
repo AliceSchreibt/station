@@ -139,29 +139,34 @@ h2 {
 
 
 
-<model-viewer
-  src="stantion.glb"
-  camera-controls
-  reveal="auto"
-  debug-mode
-  auto-rotate-delay="0"
-  rotation-per-second="1deg"
-  min-camera-orbit="auto auto auto"
-  max-camera-orbit="auto auto auto"
-  interaction-prompt="none"
-  touch-action="none"
-  style="width:100%; height:70vh; background:#eee;"> 
-
-  <button  
- 
-    slot="hotspot-2" 
-    data-position="0.9255818163218184m -0.42375542920358544m -0.22542717449953958m" 
-    data-normal="-3.342460718420962e-17m -0.8660252448999566m -0.5000002751958943m"
-   onclick="window.open('pump.pdf')">
-Насос
-</button>
-    
+<model-viewer src="stantion.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <button class="Hotspot" slot="hotspot-1"
+      data-position="1.1283486748831142m -1.9800000001899916m -0.03315082394123875m" 
+      data-normal="4.440892098500626e-16m -1m -2.189528850507527e-47m"
+      data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Блок нагрева пропиленгликоля</div>
+    </button><button class="Hotspot" slot="hotspot-2" 
+               data-position="0.9044743787582423m -0.3018590642862913m -0.31035173275589983m"
+               data-normal="-1.0950281856927998e-16m -0.14904314688415032m -0.9888306934793588m" 
+               data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Насос</div>
+    </button><button class="Hotspot" slot="hotspot-3" 
+               data-position="0.05186868880615769m -1.3270644231898143m -0.332118674902295m"
+               data-normal="-0.9438832789844448m 0m -0.33027920863047533m" 
+               data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Теплообменник</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
 </model-viewer>
+
   
 <h2>Полезные ссылки</h2>
 
